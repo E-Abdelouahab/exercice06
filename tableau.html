@@ -1,0 +1,102 @@
+<html style="background-color: tomato;">
+<head>
+    <title>Formulaire</title>
+	<script type="text/javascript">
+		class Person{
+	    	constructor(name, lastName, age, profession){
+		        this.name = name;
+		        this.lastName = lastName;
+		        this.age = age;
+                this.profession = profession;
+               
+		    }
+		}
+
+		function addRow(){
+		    let row = "<tr>";
+		    let person = new Person(
+		        document.getElementById("name").value,
+		        document.getElementById("lastName").value,
+		        document.getElementById("age").value,
+                document.getElementById("profession").value, 
+                
+		    )
+		    row += "<td>"+person.name+"</td>";
+		    row += "<td>"+person.lastName+"</td>";
+		    row += "<td>"+person.age+"</td>";
+            row += "<td>"+person.profession+"</td>";
+            row += "</tr>";
+            
+		    document.getElementById("tabl2").innerHTML += row;
+
+		    // Persons.push(person);
+		    // for(let i = 0; i < Persons.length; i++){
+		    //     console.log(Persons[i]);
+		    // }
+        }
+        
+	</script>
+</head>
+<body>
+	<center style=" background-color: bisque;margin-bottom: 3px;">
+		<form name="form"></form>
+			<table border="1" id="table">
+				<tbody><tr>
+					<td>
+						<label>nom :</label>
+					</td>
+					<td>
+						<input type="text" id="name" name="n_nom">
+					</td>
+					<td>
+						<label>prénom :</label>
+					</td>
+					<td>
+						<input type="text" id="lastName" name="n_prenom">
+					</td>
+				</tr>
+				<tr>
+				
+					<td>
+						<label>age :</label>
+					</td>
+					<td>
+						<input type="text" id="age" name="votre age">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>profession :</label>
+					</td>
+					<td>
+                        <input type="text" id="profession" name="profession">
+					</td>
+				</tr>
+				
+               
+				<!-- <input type="button" id="btn" value="ajouter" onclick="addRow()"> -->
+			</tbody>
+		</table>
+			<center>
+				<input type="button" id="btn" value="ajouter" onclick="addRow()">
+			</center>
+		
+	</center> <br>
+
+	<center>
+		<table border="1" cellspacing="0" id="tabl2">
+			<tbody><tr>
+				<td>nom</td>
+				<td>prénom</td>
+				<td>votre age</td>
+                <td>profession</td>
+                
+	
+
+			</tr>
+		</tbody>
+	</table>
+	</center>
+
+</body>
+</html>
